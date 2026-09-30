@@ -1,5 +1,50 @@
 function minDate(dates) {
   //write you code here
+	let datesArr = [];
+	for(let i=0; i<dates.length; i++){
+		let tempArr = dates[i].split("/").map(Number);
+		datesArr.push(tempArr);	
+	}
+    console.log(datesArr);
+    let minYear = datesArr[0][0];
+    let minMonth = 13;
+    let minDate = 32;
+    console.log(minYear, minMonth, minDate);
+    //finding min year
+    for(let i=0; i<datesArr.length; i++){
+        let j=0;
+        //finding minimum year value
+        // console.log(datesArr[i][j]);
+        if(datesArr[i][j] < minYear){
+            minYear = datesArr[i][j];
+        }
+    }
+    console.log(`min year = ${minYear}`);
+    //finding min month
+    for(let i=0; i<datesArr.length; i++){
+        let j=0;
+        let k=1;
+        //finding minimum year value
+        // console.log(datesArr[i][k]);
+        if(datesArr[i][j] == minYear && datesArr[i][k] < minMonth){
+            minMonth = datesArr[i][k];
+        }
+        
+    }
+    console.log(`min month = ${minMonth}`);
+    //finding min date
+    for(let i=0; i<datesArr.length; i++){
+        let j=0;
+        let k=1;
+        let l=2;
+        //finding minimum year value
+        // console.log(datesArr[i][k]);
+        if(datesArr[i][j] == minYear && datesArr[i][k] == minMonth && datesArr[i][l] < minDate){
+            minDate = datesArr[i][l];
+        }
+        
+    }
+    return `${minYear}/${minMonth}/${minDate}`;
 }
 
 // Do not change the code
